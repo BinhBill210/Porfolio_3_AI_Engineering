@@ -1,0 +1,11 @@
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+joblib
+tensorflow
+h5py
+nbformat
+nbclient
+ipykernel

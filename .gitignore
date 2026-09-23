@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+models/_smoke.h5
+*.pyc
+_build_report.py
+_fast_check.ipynb
+~$*
+ANN_Regression_Classification.ipynb
+CNN_Image_Classifcation.ipynb
+DL_Models_ExampleCode.ipynb
+MLP_Classifcation.ipynb
+MLP_Regression.ipynb
+Portfolio Task 3*.pdf
+Portfolio_Assessment_3_1_BinhThaiNguyen.pdf
+Portfolio_Assessment_3_1_BinhThaiNguyen.docx
