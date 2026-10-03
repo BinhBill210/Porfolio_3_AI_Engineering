@@ -1,0 +1,90 @@
+{
+  "dataset_rows": 52416,
+  "features_part_a": [
+    "Temperature",
+    "Humidity",
+    "WindSpeed",
+    "GeneralDiffuseFlows",
+    "DiffuseFlows",
+    "Hour",
+    "DayOfWeek",
+    "Month",
+    "IsWeekend",
+    "CoolingDegree",
+    "TempHour",
+    "SolarTotal",
+    "DiffuseRatio",
+    "HourSin",
+    "HourCos"
+  ],
+  "sequence_length": 36,
+  "sequence_features": [
+    "TotalPower",
+    "Temperature",
+    "Humidity",
+    "WindSpeed",
+    "SolarTotal",
+    "CoolingDegree",
+    "HourSin",
+    "HourCos",
+    "IsWeekend"
+  ],
+  "train_samples": 41932,
+  "test_samples": 10484,
+  "results": [
+    {
+      "Model Type": "Traditional ML",
+      "Model": "Random Forest + lag features",
+      "Inputs": "weather + calendar + lags",
+      "R2": 0.9975016257764172,
+      "RMSE": 705.2757949630144,
+      "MAE": 461.52006791326914,
+      "MAPE%": 0.7223832566891809
+    },
+    {
+      "Model Type": "Baseline",
+      "Model": "Persistence baseline y(t-1)",
+      "Inputs": "last value",
+      "R2": 0.9929232443911787,
+      "RMSE": 1186.9907450208061,
+      "MAE": 787.5459490448302,
+      "MAPE%": 1.2297675004157915
+    },
+    {
+      "Model Type": "Deep Learning 1",
+      "Model": "LSTM-A (seq 36, 64/32, batch 32)",
+      "Inputs": "36-step sequence",
+      "R2": 0.9622281666972341,
+      "RMSE": 2742.2955950596984,
+      "MAE": 1952.090222980265,
+      "MAPE%": 3.0790327463115066
+    },
+    {
+      "Model Type": "Deep Learning 2",
+      "Model": "LSTM-B (seq 72, 96/48, batch 64)",
+      "Inputs": "72-step sequence",
+      "R2": 0.9556457717924657,
+      "RMSE": 2971.6506169418094,
+      "MAE": 2128.625252615793,
+      "MAPE%": 3.349383318335349
+    },
+    {
+      "Model Type": "Traditional ML",
+      "Model": "Random Forest Regressor",
+      "Inputs": "weather + calendar",
+      "R2": 0.8538310052640075,
+      "RMSE": 5394.582807439028,
+      "MAE": 4484.353288201898,
+      "MAPE%": 7.481165674795953
+    },
+    {
+      "Model Type": "Traditional ML",
+      "Model": "MLP Regressor",
+      "Inputs": "weather + calendar",
+      "R2": -0.8366224431288796,
+      "RMSE": 19122.30220331757,
+      "MAE": 15398.363999647603,
+      "MAPE%": 23.305205802568533
+    }
+  ]
+}
